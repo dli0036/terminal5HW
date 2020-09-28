@@ -448,6 +448,8 @@ example  LinkedList.java  Node.class
 [dialiu@sol28 example]$ ls
 example          LinkedList.java  myscript.sh  output.txt   Pokemon.txt
 hello-world.git  myscript1        Node.class   Pokemon.csv
+
+//Shell script for the above tasks
 [dialiu@sol28 example]$ ./myscript1
 Hello human!
 Moving contents of csv file to txt file . . .
