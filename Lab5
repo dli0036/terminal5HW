@@ -1,0 +1,421 @@
+Last login: Thu Sep 24 15:22:20 on ttys0e1
+
+The default interactive shell is now zsh.
+
+To update your account to use zsh, please run ‘chsh -s /bin/zsh’.
+
+For more details, please visit https://support.apple.com/kb/HT208050.
+
+[Dianas-iMac:~ dianaliu$ ssh dialiu@146.245.252.28
+
+Access to Brooklyn College computers is restricted to authorized users
+and approved educational and research purposes, only.
+
+[dialiu@146.245.252.28's password:
+
+Last login: Thu Sep 24 15:23:19 2020 from cpe-66-65-66-177.si.res.rr.com
+
+[[dialiu@sol28 ~]$ ls
+
+example FALL262@ LinkedList.java Node.class wget
+
+[[dialiu@sol28 ~]$ cd example
+
+[{dialiu@sol28 example]$ head Pokemon.csv
+
+#,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def, Speed, Generation, Legendary
+
+1, Bulbasaur, Grass, Poison,318,45,49,49,65,65,45,1, FALSE
+
+2, Ivysaur, Grass, Poison, 405,60,62,63,80,80,60,1, FALSE
+
+3, Venusaur,Grass,Poison,525,80,82,83,100,100,80,1, FALSE
+
+3,VenusaurMega Venusaur, Grass, Poison, 625,80,100,123,122,120,80,1, FALSE
+
+4, Charmander, Fire, ,309,39,52,43,60,50,65,1, FALSE
+
+5,Charmeleon, Fire, ,405,58,64,58, 80,65, 80,1, FALSE
+
+6, Charizard, Fire, Flying, 534, 78, 84,78, 109,85, 100, 1, FALSE
+
+6,CharizardMega Charizard X,Fire, Dragon, 634, 78,130,111,130,85,100,1, FALSE
+
+6,CharizardMega Charizard Y,Fire, Flying, 634, 78,104, 78,159,115,100,1, FALSE
+
+(dialiu@sol28 example]$ cut-d, -f 2,3-4 Pokemon.csv
+
+[bash: cut-d,: command not found...
+
+
+//this command cuts and display column #2,3,4 of csv file
+(dialiu@sol28 example]$ cut -d, -f 2,3-4 Pokemon.csv
+
+[Name, Type 1,Type 2
+
+Bulbasaur,Grass,Poison
+
+Ivysaur,Grass,Poison
+
+Venusaur,Grass,Poison
+
+VenusaurMega Venusaur,Grass,Poison
+
+Charmander,Fire,
+
+Charmeleon, Fire,
+
+Charizard,Fire,Flying
+
+CharizardMega Charizard X,Fire,Dragon
+
+CharizardMega Charizard Y,Fire,Flying
+
+Squirtle,Water,
+
+Wartortle,Water,
+
+Blastoise,Water,
+
+BlastoiseMega Blastoise,Water,
+
+Caterpie, Bug,
+
+Metapod, Bug,
+
+Butterfree, Bug, Flying
+
+Weedle, Bug, Poison
+
+Kakuna, Bug, Poison
+
+Beedrill, Bug, Poison
+
+BeedrillMega Beedrill,Bug, Poison
+
+Pidgey, Normal, Flying
+
+Pidgeotto, Normal, Flying
+
+Pidgeot, Normal, Flying
+
+PidgeotMega Pidgeot, Normal, Flying
+
+Rattata,Normal,
+
+Raticate,Normal,
+
+Spearow, Normal, Flying
+
+Fearow, Normal, Flying
+
+Ekans,Poison,
+
+Arbok, Poison,
+
+Pikachu,Electric,
+
+Raichu, Electric,
+
+Sandshrew, Ground,
+
+Sandslash, Ground,
+
+Nidoran?, Poison,
+
+Nidorina, Poison,
+
+Nidoqueen, Poison, Ground
+
+Nidoran¢g,Poison,
+
+Nidorino, Poison,
+
+Nidoking, Poison, Ground
+
+Clefairy,Fairy,
+
+Clefable,Fairy,
+
+Vulpix,Fire,
+
+Ninetales,Fire,
+
+Jigglypuff ,Normal, Fairy
+HoopaHoopa Confined,Psychic, Ghost
+HoopaHoopa Unbound, Psychic, Dark
+Volcanion,Fire,wWater
+
+
+//this command prints the thrid column of the csv file
+[[dialiu@sol28 example]$ awk -F, 'NR>2 { print $3 ; }' Pokemon.csv
+Grass
+Grass
+Grass
+Fire
+Fire
+Fire
+Fire
+Fire
+Water
+Water
+Water
+Water
+Bug
+
+Bug
+
+Bug
+
+Bug
+
+Bug
+
+Bug
+
+Bug
+Normal
+Normal
+Normal
+Normal
+Normal
+Normal
+Normal
+Normal
+Poison
+Poison
+Electric
+Electric
+Ground
+Ground
+Poison
+Poison
+Poison
+Poison
+Poison
+Poison
+Fairy
+Fairy
+Fire
+Fire
+Normal
+Normal
+Poison
+Poison
+Grass
+Grass
+Grass
+Bug
+
+Bug
+
+Bug
+
+Bug
+Ground
+Ground
+Normal
+Normal
+Water
+Water
+Fighting
+Fighting
+Fire
+Fire
+Water
+Water
+Water
+Psychic
+Psychic
+
+Dragon
+
+Rock
+
+Rock
+Psychic
+Psychic
+Fire
+
+[{dialiu@sol28 example]$ 1s
+example hello-world.git LinkedList.java tyscript.sh Node.class Pokemon.csv
+//command prints swaps column 3 and 1 with each other, make 3rd column the first column displayed
+[{dialiu@sol28 example]$ awk ' FS="," { print $3 "," $1 } ' Pokemon.csv
+2, Total, HP, Attack, Defense,Sp.,#,Name, Type
+Grass,1
+Grass,2
+Grass,3
+Grass,3
+Fire,4
+Fire,5
+Fire,6
+Fire,6
+Fire,6
+wWater,7
+water,8
+wWater,9
+wWater,9
+Bug, 18
+Bug,11
+
+Bug, 12
+Bug,13
+Bug,14
+
+Bug, 15
+
+Bug, 15
+Normal,16
+Normal,17
+Normal,18
+Normal,18
+Normal,19
+Normal, 20
+Normal,21
+Normal, 22
+Poison, 23
+Poison, 24
+Electric, 25
+Electric, 26
+Ground, 27
+Ground, 28
+Poison, 29
+Poison, 30
+Poison, 31
+Poison, 32
+Poison, 33
+Poison, 34
+Fairy,35
+Fairy,36
+Fire,37
+Fire,38
+Normal,39
+Normal, 4@
+Poison, 41
+Poison, 42
+Grass,43
+Grass,44
+Grass,45
+Bug, 46
+
+Bug, 47
+
+Bug, 48
+
+Bug, 49
+Ground, 58
+Ground, 51
+Normal,52
+Normal,53
+Water,54
+Water,55
+Fighting, 56
+Fighting, 57
+
+Bug, 666
+Fire,667
+Fire,668
+Fairy, 669
+Fairy,670
+Fairy,671
+Grass,672
+Grass,673
+Fighting, 674
+Fighting, 675
+Normal, 676
+Psychic, 677
+Psychic, 678
+Psychic, 678
+Steel, 679
+Steel, 680
+Steel, 681
+Steel, 681
+Fairy, 682
+Fairy, 683
+Fairy, 684
+Fairy, 685
+Dark,686
+Dark,687
+Rock, 688
+Rock, 689
+Poison, 690
+Poison, 691
+Water, 692
+Water, 693
+Electric,694
+Electric,695
+Rock, 696
+Rock, 697
+Rock, 698
+Rock, 699
+Fairy, 700
+Fighting, 701
+Electric, 702
+Rock, 703
+Dragon, 704
+Dragon, 705
+Dragon, 706
+Steel, 707
+Ghost, 708
+Ghost, 709
+Ghost, 710
+Ghost, 710
+Ghost, 710
+Ghost, 710
+Ghost, 711
+Ghost, 711
+Ghost, 711
+Ghost, 711
+Ice, 712
+
+Ice, 713
+Flying, 714
+Flying, 715
+Fairy,716
+Dark,717
+Dragon, 718
+Rock, 719
+Rock, 719
+Psychic, 720
+Psychic, 720
+Fire,721
+
+//saves terminal output into a new text file 
+[[dialiu@sol28 example]$ command > terminalOutput. txt
+[[dialiu@sol28 example]$ command>output. txt
+[[dialiu@sol28 example]$ 1s
+example LinkedList.java Node.class Pokemon.csv
+hello-world.git nyscript.sh output.txt terminalOutput.txt
+
+//display the beginning part of the file
+[[dialiu@sol28 example]$ head output.txt
+(dialiu@sol28 example]$
+
+[[dialiu@sol28 ~]$ ls }
+example FALL2020 LinkedList.java myScripts Node.class wget
+
+//open myScripts directory
+[[dialiu@sol28 ~]$ cd myScripts }
+
+[{dialiu@sol28 myScripts]$ nano myscriptl ]
+[(dialiu@sol28 myScripts]$ cd example ]
+-bash: cd: example: No such file or directory
+
+[[dialiu@sol28 myScripts]$ cd - }
+fusersl/st/dialiu
+
+[[dialiu@sol28 ~]$ cd example }
+[[dialiu@sol28 example]$ 1s }
+eet ene LinkedList.java Node.class Pokemon.csv
+
+hello-world.git myscript.sh output.txt terminalOutput. txt
+
+[[dialiu@sol28 example]$ nano myscript1 ]
+[[dialiu@sol28 example]$ cd - }
+fusersl/st/dialiu
+
+[[dialiu@sol28 ~]$ cd myScripts }
+[[dialiu@sol28 myScripts]$ 1s }
+ere ee
+
+[dialiu@sol28 myScripts]$
